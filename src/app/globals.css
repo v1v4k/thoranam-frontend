@@ -1,0 +1,91 @@
+/* Provisional foundation tokens; detailed UI awaits approved Stitch designs. */
+:root {
+  color-scheme: light;
+  --color-ivory: #faf7ef;
+  --color-forest: #183e32;
+  --color-maroon: #722f3b;
+  --color-gold: #a7833c;
+  --color-text: #293b34;
+  background: var(--color-ivory);
+  color: var(--color-text);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: var(--color-maroon);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-maroon);
+  outline-offset: 5px;
+}
+
+.skip-link {
+  position: absolute;
+  inset-block-start: 1rem;
+  inset-inline-start: 1rem;
+  z-index: 1;
+  padding: 0.75rem 1rem;
+  background: var(--color-ivory);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.foundation {
+  width: min(100%, 64rem);
+  margin-inline: auto;
+  padding: clamp(5rem, 15vh, 10rem) clamp(1.5rem, 6vw, 5rem);
+}
+
+.foundation::before {
+  content: '';
+  display: block;
+  width: 3rem;
+  border-block-start: 3px solid var(--color-gold);
+  margin-block-end: 2rem;
+}
+
+h1 {
+  color: var(--color-forest);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  margin-block: 0.5rem 1.5rem;
+}
+
+p {
+  max-width: 60ch;
+}
+
+.eyebrow {
+  color: var(--color-maroon);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
